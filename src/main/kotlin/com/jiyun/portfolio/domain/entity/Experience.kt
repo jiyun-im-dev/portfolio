@@ -32,11 +32,7 @@ class Experience(
 
     var isActive: Boolean = isActive
 
-    @OneToMany(
-        targetEntity = ExperienceDetail::class,
-        fetch = FetchType.LAZY,
-        cascade = [CascadeType.ALL]
-    )
+    @OneToMany(targetEntity = ExperienceDetail::class, fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
     @JoinColumn(name = "experience_id")
     var details: MutableList<ExperienceDetail> = mutableListOf() //  초기값은 빈 리스트
 
