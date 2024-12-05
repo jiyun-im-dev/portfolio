@@ -2,6 +2,7 @@ package com.jiyun.portfolio.domain.entity
 
 import jakarta.persistence.*
 
+// 다대다 관계를 일대다처럼 풀어주는 엔티티
 @Entity
 class ProjectSkill(project: Project, skill: Skill) : BaseEntity() {
 
