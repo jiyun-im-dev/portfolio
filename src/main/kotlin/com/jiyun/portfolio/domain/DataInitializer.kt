@@ -12,11 +12,11 @@ import java.time.LocalDate
 @Profile(value = ["default"])
 class DataInitializer( // 생성자 주입?
     private val achievementRepository: AchievementRepository,
+    private val experienceRepository: ExperienceRepository,
     private val introductionRepository: IntroductionRepository,
     private val linkRepository: LinkRepository,
-    private val skillRepository: SkillRepository,
     private val projectRepository: ProjectRepository,
-    private val experienceRepository: ExperienceRepository
+    private val skillRepository: SkillRepository
 ) {
 
     @PostConstruct
