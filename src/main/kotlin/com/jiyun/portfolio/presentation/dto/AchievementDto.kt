@@ -1,3 +1,8 @@
 package com.jiyun.portfolio.presentation.dto
 
-class AchievementDto
+data class AchievementDto(
+    val title: String,
+    val description: String,
+    val host: String,
+    val achievedDate: String?
+)
