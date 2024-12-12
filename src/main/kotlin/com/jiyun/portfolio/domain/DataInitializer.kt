@@ -49,9 +49,8 @@ class DataInitializer( // 생성자 주입?
 
         // 링크
         val links = mutableListOf<Link>(
-            Link(name = "깃헙", content = "깃헙주소", isActive = true),
-            Link(name = "링크드인", content = "링크드인주소", isActive = true),
-            Link(name = "블로그", content = "블로그주소", isActive = true)
+            Link(name = "github", content = "https://github.com/jiyun-im-dev", isActive = true),
+            Link(name = "linkedin", content = "https://www.linkedin.com/in/ji-yun-im-5635832a2/", isActive = true),
         )
         linkRepository.saveAll(links)
 
