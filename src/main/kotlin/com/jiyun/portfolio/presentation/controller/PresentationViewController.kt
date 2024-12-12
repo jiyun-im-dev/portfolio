@@ -26,7 +26,7 @@ class PresentationViewController( // 서버 사이드 렌더링
     @GetMapping("/resume")
     fun resume(model: Model): String {
         model.addAttribute("resume", presentationService.getResume())
-        model.addAttribute("skillTypes", SkillType.values())
+        model.addAttribute("skillTypes", SkillType.entries.map { it.name }.toTypedArray())
         return "presentation/resume"
     }
 

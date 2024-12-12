@@ -57,7 +57,7 @@ class DataInitializer( // 생성자 주입?
         // 경험
         val experience1 = Experience(
             title = "고양이 밥 주기",
-            description = "라옹이 밥 주기",
+            description = "라옹이에게 밥을 주는 일",
             startYear = 2017,
             startMonth = 7,
             endYear = null,
@@ -70,7 +70,22 @@ class DataInitializer( // 생성자 주입?
                 ExperienceDetail(content = "로얄캐닌 사용", isActive = true)
             )
         )
+
         val experience2 = Experience(
+            title = "성신여자대학교",
+            description = "컴퓨터공학과",
+            startYear = 2020,
+            startMonth = 9,
+            endYear = 2023,
+            endMonth = 2,
+            isActive = true,
+        )
+        experience2.addDetails(
+            mutableListOf(
+                ExperienceDetail(content = "머시기머시기를 배움", isActive = true)
+            )
+        )
+        val experience3 = Experience(
             title = "네오뉴트라 근무",
             description = "정보시스템팀",
             startYear = 2023,
@@ -79,14 +94,14 @@ class DataInitializer( // 생성자 주입?
             endMonth = 8,
             isActive = true,
         )
-        experience2.addDetails(
+        experience3.addDetails(
             mutableListOf(
                 ExperienceDetail(content = "MariaDB, PostgreSQL 사용", isActive = true),
                 ExperienceDetail(content = "자바스크립트 사용", isActive = true),
                 ExperienceDetail(content = "그룹웨어와 연동 로직 구현", isActive = true),
             )
         )
-        experienceRepository.saveAll(mutableListOf(experience1, experience2))
+        experienceRepository.saveAll(mutableListOf(experience1, experience2, experience3))
 
         // 스킬
         val java = Skill(name = "Java", type = SkillType.LANGUAGE.name, isActive = true)
