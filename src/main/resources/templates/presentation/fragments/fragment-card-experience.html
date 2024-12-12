@@ -6,16 +6,14 @@
         <div class="row align-items-center gx-5">
             <div class="col text-center text-lg-start mb-4 mb-lg-0">
                 <div class="bg-light p-4 rounded-4">
-                    <div class="text-primary fw-bolder mb-2"
-                         th:text="|${experience.startYearMonth} - ${experience.endYearMonth}|">시작연월 - 종료연월
-                    </div>
+                    <div class="text-primary fw-bolder mb-2" th:text="|${experience.startYearMonth} - ${experience.endYearMonth}|">시작연월 - 종료연월</div>
                     <div class="small text-muted" th:text="${experience.description}">경험 설명</div>
                 </div>
             </div>
             <div class="col-lg-8">
                 <div class="lead fw-bolder" th:text="${experience.title}">경험 제목</div>
-                <div class="small" th:each="detail : ${experience.details}" th:text="|★ ${detail}|"> 경험 디테일
-                </div>
+                <p></p> <!-- 여백 -->
+                <div class="small" th:each="detail : ${experience.details}" th:text="|★ ${detail}|">경험 디테일</div>
             </div>
         </div>
     </div>

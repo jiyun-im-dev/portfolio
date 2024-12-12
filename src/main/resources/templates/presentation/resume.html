@@ -16,20 +16,18 @@
             <div class="col-lg-11 col-xl-9 col-xxl-8">
                 <!-- Experience Section-->
                 <section>
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h2 class="text-primary fw-bolder mb-0">Experience</h2>
-                        <!-- Experience Cards -->
-                        <th:block th:each="experience : ${resume.experiences}">
-                            <div th:replace="/presentation/fragments/fragment-card-experience :: card(${experience})"></div>
-                        </th:block>
-                    </div>
+                    <h2 class="text-primary fw-bolder mb-4">Experience</h2>
+                    <!-- Experience Cards -->
+                    <th:block th:each="experience : ${resume.experiences}">
+                        <div th:replace="~{/presentation/fragments/fragment-card-experience :: card(${experience})}"></div>
+                    </th:block>
                 </section>
                 <!-- Achievement Section-->
                 <section>
                     <h2 class="text-secondary fw-bolder mb-4">Achievement</h2>
                     <!-- Achievement Cards -->
                     <th:block th:each="achievement : ${resume.achievements}">
-                        <div th:replace="/presentation/fragments/fragment-card-achievement :: card(${achievement})"></div>
+                        <div th:replace="~{/presentation/fragments/fragment-card-achievement :: card(${achievement})}"></div>
                     </th:block>
                 </section>
                 <!-- Divider-->

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="card shadow border-0 rounded-4 mb-5" th:fragment="card(project)"> <!-- project를 파라미터로 받음 -->
+    <div class="card-body p-5">
+        <div class="row align-items-center gx-5">
+            <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                <div class="bg-light p-4 rounded-4">
+                    <div class="text-primary fw-bolder mb-2"
+                         th:text="|${project.startYearMonth} - ${project.endYearMonth}|">시작연월 - 종료연월
+                    </div>
+                    <div class="small text-muted d-inline" th:each="skill : ${project.skills}" th:text="${skill.name}">
+                        프로젝트 스킬명
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="lead fw-bolder" th:text="${project.name}">프로젝트명</div>
+                <div class="small" th:text="${project.description}|">프로젝트 설명</div>
+                <p></p> <!-- 여백 -->
+                <th:block th:each="detail : ${project.details}">
+                    <div class="small" th:if="${#strings.isEmpty(detail.url)}" th:text="|★ ${detail.content}|">프로젝트 디테일</div>
+                    <a class="small" target="_blank" th:href="${detail.url}" th:if="${!#strings.isEmpty(detail.url)}" th:text="|★ ${detail.content}|">프로젝트 링크</a>
+                </th:block>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
