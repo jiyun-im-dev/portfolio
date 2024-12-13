@@ -51,9 +51,8 @@
                         <p class="text-muted" th:each="introduction : ${introductions}"
                            th:text="${introduction.content}">케로케로케로케로 나가자</p>
                         <div class="d-flex justify-content-center fs-2 gap-4">
-                            <a class="text-gradient" href="#!" target="_blank" th:each="link : ${links}"
-                               th:href="${link.content}">
-                                <i class="bi bi-twitter" th:class="|bi bi-${link.name}|"></i>
+                            <a class="text-gradient" href="#!" th:href="${link.content}" target="_blank" th:each="link : ${links}">
+                                <i class="bi bi-name" th:class="|bi bi-${link.name}|"></i>
                             </a>
                         </div>
                     </div>
