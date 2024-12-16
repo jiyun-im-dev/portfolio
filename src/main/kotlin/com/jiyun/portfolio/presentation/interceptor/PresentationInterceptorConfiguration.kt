@@ -12,7 +12,7 @@ class PresentationInterceptorConfiguration(
     override fun addInterceptors(registry: InterceptorRegistry) {
         registry.addInterceptor(presentationInterceptor)
             .addPathPatterns("/**") // 모든 경로
-            .excludePathPatterns("/assets/**", "/css/**", "/js/**", "/admin/**", "h2**", "/favicon.ico", "/error")
+            .excludePathPatterns("/assets/**", "/css/**", "/js/**", "/admin/**", "/h2**", "/favicon.ico", "/error")
     }
 
 }
